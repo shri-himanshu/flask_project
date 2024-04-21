@@ -1,0 +1,30 @@
+(pythonProjectFlask) PS C:\Users\shrivh1\Downloads\pythonProjectFlask> cd .\youtube_flask_tutorial\
+(pythonProjectFlask) PS C:\Users\shrivh1\Downloads\pythonProjectFlask\youtube_flask_tutorial> python                      
+Python 3.10.5 (tags/v3.10.5:f377153, Jun  6 2022, 16:14:13) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from flaskblog import app, db
+
+>>> app.app_context().push()    <<---
+>>> from flaskblog.models import User, Post
+>>> dir(user)
+['__abstract__', '__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__fsa__', '__ge__', '__getattribute__', '__gt__', '__hash__',
+ '__init__', '__init_subclass__', '__le__', '__lt__', '__mapper__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__'
+, '__subclasshook__', '__table__', '__tablename__', '__weakref__', '_sa_class_manager', '_sa_instance_state', '_sa_registry', 'email', 'id', 'image_file', 'metadata', 'password', 'post
+s', 'query', 'query_class', 'registry', 'username']
+>>> user.__dict__
+{'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001DFC88579A0>}
+
+
+>>> User.query.all()
+[User('alph', 'a@b.com', 'default.jpg')]
+
+
+>>> User.query.first()
+User('alph', 'a@b.com', 'default.jpg')
+
+
+>>> User.query.filter_by(username='alph').all()
+[User('alph', 'a@b.com', 'default.jpg')]
+
+>>> Post.query.all() 
+[]
